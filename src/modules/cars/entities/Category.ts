@@ -7,13 +7,13 @@ class Category {
   id?: string;
 
   @Column()
-  name: string;
+  name!: string;
 
   @Column()
-  description: string;
+  description!: string;
 
   @CreateDateColumn()
-  created_at: Date;
+  created_at!: Date;
 
   constructor() {
     if (!this.id) {
