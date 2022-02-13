@@ -1,15 +1,14 @@
-import { v4 as uuidv4 } from 'uuid'
-import { Column, Entity, PrimaryColumn } from 'typeorm'
+import { v4 as uuidV4 } from 'uuid'
+import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity("users")
 class User {
 
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn('uuid')
   id?: string;
 
   @Column()
   name!: string;
-
 
   @Column()
   email!: string;
@@ -24,11 +23,14 @@ class User {
   isAdmin!: boolean;
 
   @Column()
+  avatar?: string;
+
+  @Column()
   created_at!: string;
 
   constructor() {
     if (!this.id) {
-      this.id = uuidv4()
+      this.id = uuidV4()
     }
   }
 

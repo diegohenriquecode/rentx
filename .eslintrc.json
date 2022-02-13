@@ -17,12 +17,12 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "eslint-plugin-import-helpers",
-    "prettier"
+    "prettier",
+    "eslint-plugin-import-helpers"
   ],
   "rules": {
-    "prettier/prettier": "error",
     "camelcase": "off",
+    "prettier/prettier": "error",
     "import/no-unresolved": "error",
     "@typescript-eslint/naming-convention": [
       "error",
@@ -57,7 +57,7 @@
         "newlinesBetween": "always",
         "groups": [
           "module",
-          "/^@shared/",
+          "/^@/",
           [
             "parent",
             "sibling",
