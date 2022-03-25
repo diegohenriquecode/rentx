@@ -24,7 +24,7 @@ class CategoriesRepository implements ICategoriesRepository {
     return categories;
   }
 
-  async findByName(name: string): Promise<Category | undefined> {
+  async findByName(name: string): Promise<Category> {
     // Select * From categories where name = "name" -> limit 1
     const category = await this.repository.findOne({ name })
     return category

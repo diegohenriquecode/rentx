@@ -18,7 +18,7 @@ class SpecificationRepositoryInMemory implements ISpecificationsRepository {
     return specification;
   }
 
-  async findByName(name: string): Promise<Specification | undefined> {
+  async findByName(name: string): Promise<Specification> {
 
     return this.specifications.find((specification) => specification.name === name)
   }

@@ -13,7 +13,7 @@ class ListAvaliableCarsUseCase {
     @inject("CarsRepository")
     private carsRepository: ICarsRepository
   ) { }
-  async execute({ category_id, brand, name }: IRequest): Promise<Car[] | undefined> {
+  async execute({ category_id, brand, name }: IRequest): Promise<Car[]> {
     const cars = await this.carsRepository.findAvailable(
       category_id,
       brand, 
