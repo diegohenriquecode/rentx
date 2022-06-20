@@ -9,6 +9,7 @@ class ImportCategoryController {
 
     const importCategoryUseCase = container.resolve(ImportCategoryUseCase)
 
+    if(file)
     await importCategoryUseCase.execute(file)
 
     return response.status(201).send()

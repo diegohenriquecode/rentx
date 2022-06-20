@@ -6,10 +6,10 @@ import { IRentalsRepository } from "../IRentalsRepository";
 class RentalsRepositoryInMemory implements IRentalsRepository {
   rentals: Rental[] = [];
   
-  async findOpenRentalByCar(car_id: string): Promise<Rental> {
+  async findOpenRentalByCar(car_id: string): Promise<Rental | undefined> {
     return this.rentals.find((rental => rental.car_id === car_id && !rental.end_date))
   }
-  async findOpenrentalByUser(user_id: string): Promise<Rental> {
+  async findOpenrentalByUser(user_id: string): Promise<Rental | undefined> {
     return this.rentals.find(rental => rental.user_id === user_id && !rental.end_date)
   }
 

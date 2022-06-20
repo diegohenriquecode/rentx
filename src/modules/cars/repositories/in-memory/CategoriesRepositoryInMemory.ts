@@ -5,13 +5,13 @@ import { ICategoriesRepository, ICreateCategoryDTO } from "../ICategoriesReposit
 class CategoriesRepositoryInMemory implements ICategoriesRepository {
   categories: Category[] = []
 
-  async findByName(name: string): Promise<Category> {
+  async findByName(name: string): Promise<Category | undefined> {
     const category = this.categories.find(category => category.name === name)
 
     return category;
   }
 
-  async list(): Promise<Category[]> {
+  async list(): Promise<Category[] | undefined> {
     const categories = this.categories;
 
     return categories
